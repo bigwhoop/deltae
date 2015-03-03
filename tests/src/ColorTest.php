@@ -12,6 +12,13 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame([254, 129, 60], Color::fromHex('#fe813c')->toRGB());
     }
 
+    public function testRGBtoHex()
+    {
+        $this->assertSame('#ffffff', (new Color(255, 255, 255))->toHex());
+        $this->assertSame('#000000', (new Color(0, 0, 0))->toHex());
+        $this->assertSame('#fe813c', (new Color(254, 129, 60))->toHex());
+    }
+
     public function testHexToLAB()
     {
         $this->assertSame([100, 0, 0], Color::fromHex('#ffffff')->toLab());

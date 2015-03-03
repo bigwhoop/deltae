@@ -45,6 +45,19 @@ class Color
     }
 
     /**
+     * @return string
+     */
+    public function toHex()
+    {
+        $hex = "#";
+        $hex .= str_pad(dechex($this->r), 2, "0", STR_PAD_LEFT);
+        $hex .= str_pad(dechex($this->g), 2, "0", STR_PAD_LEFT);
+        $hex .= str_pad(dechex($this->b), 2, "0", STR_PAD_LEFT);
+
+        return $hex;
+    }
+
+    /**
      * The Rgb color space consists of all possible colors that can be made by the combination of red, green, and blue
      * light. It's a popular model in photography, television, and computer graphics.
      *
